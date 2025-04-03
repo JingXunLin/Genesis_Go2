@@ -36,8 +36,14 @@ For tests conducted on Genesis, please refer to [tests.md](./test_resources/test
 ## 🛠 Installation
 
 1. Create a new python virtual env with python>=3.10
-2. pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.2.4
-3. pip install genesis-world=0.2.1
+2.
+   ```bash
+   pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.2.4
+   ```
+3.
+   ```bash
+   pip install genesis-world=0.2.1
+   ```
 4. Install rsl_rl and tensorboard
    ```bash
    # Install rsl_rl.
@@ -47,7 +53,7 @@ For tests conducted on Genesis, please refer to [tests.md](./test_resources/test
    # Install tensorboard.
    pip install tensorboard
    ```
-5. Install genesis_lr
+5. Install dependency
    ```bash
    git clone https://github.com/JingXunLin/Genesis_Go2.git
    cd Genesis_Go2
