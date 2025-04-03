@@ -36,11 +36,11 @@ For tests conducted on Genesis, please refer to [tests.md](./test_resources/test
 ## 🛠 Installation
 
 1. Create a new python virtual env with python>=3.10
-2.
+2. Install pytorch for rocm
    ```bash
    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.2.4
    ```
-3.
+3. Must use pip install; use newest Genesis will cause some error
    ```bash
    pip install genesis-world=0.2.1
    ```
