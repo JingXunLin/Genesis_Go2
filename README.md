@@ -58,6 +58,9 @@ For tests conducted on Genesis, please refer to [tests.md](./test_resources/test
    git clone https://github.com/JingXunLin/Genesis_Go2.git
    cd Genesis_Go2
    pip install -e .
+
+   pip install open3d
+   pip install pygame
    ```
 6. Fix OpenGL error
    ```bash
@@ -75,7 +78,7 @@ By default, the task is set to `go2`(in `utils/helper.py`), we can run a trainin
 
 ```bash
 cd legged_gym/scripts
-python train.py --headless # run training without rendering
+python train.py --headless --max_iterations=1000 # run training without rendering
 ```
 
 After the training is done, paste the `run_name` under `logs/go2` to `load_run` in `go2_config.py`: 
@@ -83,7 +86,9 @@ After the training is done, paste the `run_name` under `logs/go2` to `load_run` 
 ![](./test_resources/paste_load_run.png)
 
 Then, run `play.py` to visualize the trained model.
-
+```bash
+vglrun python play.py --task=go2_rough
+```
 ### 📖 Instructions
 
 For more detailed instructions, please refer to the [wiki page](https://github.com/lupinjia/genesis_lr/wiki)
