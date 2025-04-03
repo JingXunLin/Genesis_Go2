@@ -75,9 +75,7 @@ After the training is done, paste the `run_name` under `logs/go2` to `load_run` 
 
 ![](./test_resources/paste_load_run.png)
 
-Then, run `play.py` to visualize the trained model:
-
-![](./test_resources/go2_flat_play.gif)
+Then, run `play.py` to visualize the trained model.
 
 ### 📖 Instructions
 
