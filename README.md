@@ -59,7 +59,14 @@ For tests conducted on Genesis, please refer to [tests.md](./test_resources/test
    cd Genesis_Go2
    pip install -e .
    ```
+6. Fix OpenGL error
+   ```bash
+   conda install -c conda-forge libstdcxx-ng
 
+   Modify  ~/miniconda3/envs/genesis/lib/python3.12/site-packages/genesis/ext/pyrender/constants.py
+   TARGET_OPEN_GL_MAJOR = 3  # Target OpenGL Major Version
+   TARGET_OPEN_GL_MINOR = 3  # Target OpenGL Minor Version
+   ```
 ## 👋 Usage
 
 ### 🚀 Quick Start
