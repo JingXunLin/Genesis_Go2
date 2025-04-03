@@ -6,7 +6,6 @@ A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for
 
 - [🦿 Legged Robotics in Genesis](#-legged-robotics-in-genesis)
   - [Table of Contents](#table-of-contents)
-  - [📅 Updates](#-updates)
   - [🌟 Features](#-features)
   - [🧪 Test Results](#-test-results)
   - [🛠 Installation](#-installation)
@@ -18,68 +17,6 @@ A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for
   - [TODO](#todo)
 
 ---
-## 📅 Updates
-
-<details>
-<summary>2025/03/22</summary>
-
-- I created a [new repo based on legged_gym](https://github.com/lupinjia/legged_gym_ext), containing custom implementation of some RL control papers.
-
-</details>
-
-<details>
-<summary>2025/02/23</summary>
-
-- find some bugs in genesis. The environments can return nan values without knowing why (https://github.com/Genesis-Embodied-AI/Genesis/issues/625), which can hinder long-time training where nan values may suddenly come out and terminates your training.
-
-  ![](./test_resources/nan_values_bug.png)
-
-</details>
-
-<details>
-<summary>2025/02/10</summary>
-
-- add measure_heights support, and provide a demo of exteroceptive locomotion ([go2_rough](https://github.com/lupinjia/genesis_lr/tree/main/legged_gym/envs/go2/go2_rough))
-
-![](./test_resources//go2_rough_demo.gif)
-
-</details>
-
-<details>
-<summary>2024/12/28</summary>
-
-- add [wiki page](https://github.com/lupinjia/genesis_lr/wiki) for instructions
-
-</details>
-
-<details>
-<summary>2024/12/26</summary>
-
-- add terrain support, optional terrain type: ["plane", "heightfield"]. 
-
-  ![](./test_resources/terrain_demo.gif)
-
-- move test results to [tests.md](./test_resources/tests.md)
-
-</details>
-
-<details>
-<summary>2024/12/24</summary>
-
-- add a new demo environment `bipedal_walker`
-
-</details>
-
-<details>
-<summary>2024/12/23</summary>
-
-- divide main and deploy branches, deploy branch should be used with a custom rsl_rl(which will be open-source soon)
-
-</details>
-
----
-
-
 ## 🌟 Features
 
 - **Totally based on [legged_gym](https://github.com/leggedrobotics/legged_gym)**
@@ -98,9 +35,9 @@ For tests conducted on Genesis, please refer to [tests.md](./test_resources/test
 
 ## 🛠 Installation
 
-1. Create a new python virtual env with python>=3.9
-2. Install [PyTorch](https://pytorch.org/)
-3. Install Genesis following the instructions in the [Genesis repo](https://github.com/Genesis-Embodied-AI/Genesis)
+1. Create a new python virtual env with python>=3.10
+2. pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.2.4
+3. pip install genesis-world=0.2.1
 4. Install rsl_rl and tensorboard
    ```bash
    # Install rsl_rl.
@@ -112,8 +49,8 @@ For tests conducted on Genesis, please refer to [tests.md](./test_resources/test
    ```
 5. Install genesis_lr
    ```bash
-   git clone https://github.com/lupinjia/genesis_lr
-   cd genesis_lr
+   git clone https://github.com/JingXunLin/Genesis_Go2.git
+   cd Genesis_Go2
    pip install -e .
    ```
 
@@ -140,12 +77,6 @@ Then, run `play.py` to visualize the trained model:
 
 For more detailed instructions, please refer to the [wiki page](https://github.com/lupinjia/genesis_lr/wiki)
 
-## 🖼️ Gallery
-
-| Go2 | Bipedal Walker |
-|--- | --- |
-| ![](./test_resources/go2_flat_play.gif) | ![](./test_resources/bipedal_walker_flat.gif) |
-
 ## 🙏 Acknowledgements
 
 - [Genesis](https://github.com/Genesis-Embodied-AI/Genesis/tree/main)
@@ -153,12 +84,3 @@ For more detailed instructions, please refer to the [wiki page](https://github.c
 - [legged_gym](https://github.com/leggedrobotics/legged_gym)
 - [rsl_rl](https://github.com/leggedrobotics/rsl_rl)
 - [unitree_rl_gym](https://github.com/unitreerobotics/unitree_rl_gym)
-
-## TODO
-
-- [x] Add domain randomization
-- [x] Verify the trained model on real robots.
-- [x] Add Heightfield support
-- [x] Add meausre_heights support
-- [ ] Add go2 deploy demos and instructions (vanilla and explicit estimator)
-- [ ] Add teacher-student implementation
