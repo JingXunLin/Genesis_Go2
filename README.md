@@ -61,6 +61,9 @@ vglrun python play.py --task=go2_rough
 
 For more detailed instructions, please refer to the [wiki page](https://github.com/lupinjia/genesis_lr/wiki)
 
+## DEMO
+- [result](https://youtu.be/wIMQZ1X2RRA)
+
 ## 🙏 Acknowledgements
 
 - [Genesis](https://github.com/Genesis-Embodied-AI/Genesis/tree/main)
