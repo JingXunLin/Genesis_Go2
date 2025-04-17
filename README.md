@@ -2,36 +2,6 @@
 
 A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for training legged robots in [genesis](https://github.com/Genesis-Embodied-AI/Genesis/tree/main)
 
-## Table of Contents
-
-- [🦿 Legged Robotics in Genesis](#-legged-robotics-in-genesis)
-  - [Table of Contents](#table-of-contents)
-  - [🌟 Features](#-features)
-  - [🧪 Test Results](#-test-results)
-  - [🛠 Installation](#-installation)
-  - [👋 Usage](#-usage)
-    - [🚀 Quick Start](#-quick-start)
-    - [📖 Instructions](#-instructions)
-  - [🖼️ Gallery](#️-gallery)
-  - [🙏 Acknowledgements](#-acknowledgements)
-  - [TODO](#todo)
-
----
-## 🌟 Features
-
-- **Totally based on [legged_gym](https://github.com/leggedrobotics/legged_gym)**
-  
-  It's easy to use for those who are familiar with legged_gym and rsl_rl
-
-- **Faster and Smaller**
-  
-  For a go2 walking on the plane task with 4096 envs, the training speed in Genesis is approximately **1.3x** compared to [Isaac Gym](https://developer.nvidia.com/isaac-gym), while the graphics memory usage is roughly **1/2** compared to IsaacGym.
-
-  With this smaller memory usage, it's possible to **run more parallel environments**, which can further improve the training speed.
-
-## 🧪 Test Results
-
-For tests conducted on Genesis, please refer to [tests.md](./test_resources/tests.md)
 
 ## 🛠 Installation
 
@@ -83,8 +53,6 @@ python train.py --headless --max_iterations=1000 # run training without renderin
 
 After the training is done, paste the `run_name` under `logs/go2` to `load_run` in `go2_config.py`: 
 
-![](./test_resources/paste_load_run.png)
-
 Then, run `play.py` to visualize the trained model.
 ```bash
 vglrun python play.py --task=go2_rough
@@ -100,3 +68,4 @@ For more detailed instructions, please refer to the [wiki page](https://github.c
 - [legged_gym](https://github.com/leggedrobotics/legged_gym)
 - [rsl_rl](https://github.com/leggedrobotics/rsl_rl)
 - [unitree_rl_gym](https://github.com/unitreerobotics/unitree_rl_gym)
+- [genesis_lr](https://github.com/lupinjia/genesis_lr)
