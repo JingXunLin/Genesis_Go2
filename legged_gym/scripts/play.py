@@ -70,7 +70,7 @@ def play(args):
     camera_deviation_follow = np.array([0., 3., -1.])
     camera_position_follow = camera_lookat_follow - camera_deviation_follow
     # for RECORD_FRAMES
-    stop_record = 400
+    stop_record = 5000
     if RECORD_FRAMES:
         env.floating_camera.start_recording()
     
@@ -85,7 +85,7 @@ def play(args):
         vec = [np.cos(comands[2]-3.14) * arrow_length, np.sin(comands[2]-3.14) * arrow_length, 0]
         pos = env.base_pos[robot_index, :].cpu().numpy()
         pos[2] += 0.3
-        env.scene.draw_debug_arrow(pos=pos, vec=vec, radius=0.05, color=(1.0, 0.0, 0.0, 0.7))
+        #env.scene.draw_debug_arrow(pos=pos, vec=vec, radius=0.05, color=(1.0, 0.0, 0.0, 0.7))
 
         env.set_commands(robot_index,comands)
         if reset_flag:
@@ -95,6 +95,7 @@ def play(args):
             # in Genesis, base link also has DOF, it's 6DOF if not fixed.
             dofs_vel = env.robot.get_dofs_velocity() # (num_envs, num_dof) [0:3] ~ base_link_vel
             push_vel = gs_rand_float(-max_push_vel_xy, max_push_vel_xy, (1,2), env.device)
+            push_vel = torch.norm(push_vel, dim=1, keepdim=True)
             # if (env.common_step_counter + env.env_identities[robot_index]) % int(env.push_interval_s / env.dt) != 0:
             #     push_vel = torch.zeros((1,2), device=env.device)
             print(push_vel)
@@ -112,7 +113,7 @@ def play(args):
             camera_position_follow = camera_lookat_follow - camera_deviation_follow
             env.set_camera(camera_position_follow, camera_lookat_follow)
             env.floating_camera.render()
-        if RECORD_FRAMES and i == stop_record:
+        if RECORD_FRAMES and reset_flag:
             env.floating_camera.stop_recording(save_to_filename="go2_rough_demo.mp4", fps=30)
             print("Saved recording to " + "go2_rough_demo.mp4")
         
@@ -149,9 +150,11 @@ def play(args):
 
 if __name__ == '__main__':
     EXPORT_POLICY = False
-    RECORD_FRAMES = False  # only record frames in extra camera view
+    RECORD_FRAMES = True  # only record frames in extra camera view
     MOVE_CAMERA   = False
     FOLLOW_ROBOT  = True
     assert not (MOVE_CAMERA and FOLLOW_ROBOT), "Cannot move camera and follow robot at the same time"
     args = get_args()
+    if RECORD_FRAMES:
+        print("!!!!!!!!!!!!!!!!!")
     play(args)

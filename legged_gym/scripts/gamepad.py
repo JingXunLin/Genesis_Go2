@@ -47,6 +47,7 @@ class control_gamepad:
         self.target_rad = 0.0
         self.command_cfg = command_cfg
         self.commands = np.zeros(self.num_commands)
+        self.commands[2] = 3.14
         self.command_scale = command_scale
         if self.command_scale is None:
             self.command_scale = [1.0, 1.0, 1.0 ,0.05]

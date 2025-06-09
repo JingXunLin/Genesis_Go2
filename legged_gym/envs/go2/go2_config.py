@@ -93,20 +93,20 @@ class GO2Cfg( LeggedRobotCfg ):
         resampling_time = 10.  # time before command are changed[s]
         heading_command = True # if true: compute ang vel command from heading error
         class ranges( LeggedRobotCfg.commands.ranges ):
-            lin_vel_x = [-0.5, 0.5] # min max [m/s]
-            lin_vel_y = [-1.0, 1.0]   # min max [m/s]
-            ang_vel_yaw = [-1, 1]    # min max [rad/s]
+            lin_vel_x = [-2.5, 2.5] # min max [m/s]
+            lin_vel_y = [-0.0, 0.0]   # min max [m/s]
+            ang_vel_yaw = [-2.0, 2.0]    # min max [rad/s]
             heading = [-3.14, 3.14]
     
     class domain_rand:
         randomize_friction = True
-        friction_range = [0.2, 1.7]
+        friction_range = [0.4, 2.0]
         randomize_base_mass = True
-        added_mass_range = [-1., 1.]
+        added_mass_range = [-1.5, 1.5]
         push_robots = True
         push_interval_s = 15
         max_push_vel_xy = 1.
-        simulate_action_latency = False # 1 step delay
+        simulate_action_latency = True # 1 step delay
         randomize_com_displacement = True
         com_displacement_range = [-0.01, 0.01]
     
@@ -125,6 +125,6 @@ class GO2CfgPPO( LeggedRobotCfgPPO ):
         run_name = ''
         experiment_name = 'go2'
         save_interval = 100
-        load_run = "Feb10_21-29-29_"
+        load_run = "Apr25_16-08-34_"
         checkpoint = -1
         max_iterations = 600
