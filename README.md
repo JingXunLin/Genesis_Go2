@@ -56,6 +56,7 @@ After the training is done, paste the `run_name` under `logs/go2` to `load_run` 
 Then, run `play.py` to visualize the trained model.
 ```bash
 vglrun python play.py --task=go2_rough
+vglrun python play.py --task=go2   //瞎子版本 只走平地
 ```
 ### 📖 Instructions
 
