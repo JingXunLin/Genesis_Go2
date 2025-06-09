@@ -5,7 +5,7 @@ A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for
 
 ## 🛠 Installation
 
-1. Create a new python virtual env with python>=3.10
+1. Create a new python virtual env with python==3.10
 2. Install pytorch for rocm
    ```bash
    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.2.4
