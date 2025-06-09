@@ -56,8 +56,9 @@ After the training is done, paste the `run_name` under `logs/go2` to `load_run` 
 Then, run `play.py` to visualize the trained model.
 ```bash
 vglrun python play.py --task=go2_rough
-vglrun python play.py --task=go2   //瞎子版本 只走平地
+vglrun python play.py --task=go2   #瞎子版本 只走平地
 ```
+operation : W前進，S後退，Q左轉，E右轉，空白隨機踢飛(一定要在pygame視窗裡操作)
 ### 📖 Instructions
 
 For more detailed instructions, please refer to the [wiki page](https://github.com/lupinjia/genesis_lr/wiki)
