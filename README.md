@@ -36,7 +36,7 @@ A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for
    ```bash
    conda install -c conda-forge libstdcxx-ng
 
-   Modify  ~/miniconda3/envs/genesis/lib/python3.12/site-packages/genesis/ext/pyrender/constants.py
+   Modify  ~/miniconda3/envs/{你的環境名字}/lib/python3.10/site-packages/genesis/ext/pyrender/constants.py
    TARGET_OPEN_GL_MAJOR = 3  # Target OpenGL Major Version
    TARGET_OPEN_GL_MINOR = 3  # Target OpenGL Minor Version
    ```
