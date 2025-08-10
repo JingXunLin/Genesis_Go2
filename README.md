@@ -31,6 +31,7 @@ A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for
 
    pip install open3d
    pip install pygame
+   pip install trimesh
    ```
 6. Fix OpenGL error
    ```bash
