@@ -12,7 +12,7 @@ A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for
    ```
 3. Must use pip install; use newest Genesis will cause some error
    ```bash
-   pip install genesis-world=0.2.1
+   pip install genesis-world==0.2.1
    ```
 4. Install rsl_rl and tensorboard
    ```bash
