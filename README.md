@@ -19,9 +19,6 @@ A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for
    # Install rsl_rl.
    git clone https://github.com/leggedrobotics/rsl_rl
    cd rsl_rl && git checkout v1.0.2 && pip install -e . --use-pep517
-
-   # Install tensorboard.
-   pip install tensorboard
    ```
 5. Install dependency
    ```bash
@@ -29,9 +26,7 @@ A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for
    cd Genesis_Go2
    pip install -e .
 
-   pip install open3d
-   pip install pygame
-   pip install trimesh
+   pip install open3d tensorboard pygame trimesh
    ```
 6. Fix OpenGL error
    ```bash
