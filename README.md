@@ -27,6 +27,7 @@ A [legged_gym](https://github.com/leggedrobotics/legged_gym) based framework for
    pip install -e .
 
    pip install open3d tensorboard pygame trimesh
+   pip install libigl==2.5.1
    ```
 6. Fix OpenGL error
    ```bash
